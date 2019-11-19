@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar slot="start" style="padding:5px">
+      <img src="../../assets/images/logo_18.png">
+    </ion-avatar>
+    <ion-title style="font-family: Brush Script MT, Brush Script Std, cursive;color: teal;font-size: xx-large; margin-left: -25px !important;
+      margin-bottom: 2px;">
+      Calorify..
+    </ion-title>
+    <ion-avatar slot="end" style="padding:18px">
+      <img src="../../assets/images/person-image.jpg">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        Food Composition
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Previous Data
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list>
+    <ion-list-header>
+      Other options
+    </ion-list-header>
+    <ion-item (click)='toggleList(1)'>
+      <ion-icon name="add" slot="end" *ngIf='!firstList'></ion-icon>
+      <ion-icon name="remove" slot="end" *ngIf='firstList'></ion-icon>
+      <ion-icon name="albums"></ion-icon>
+      <ion-label>
+        <h2 style="padding-left: 10px;">Detailed Reports</h2>
+        <ion-card class="welcome-card" *ngIf='firstList' [@enterAnimation]>
+          <ion-card-header>
+            <ion-card-title>Generate reports</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h5>
+              <ion-icon name="settings"></ion-icon>Notifications
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Administration
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Theme change
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Help & Support
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> About app
+            </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)='toggleList(4)'>
+      <ion-icon name="add" slot="end" *ngIf='!fourthList'></ion-icon>
+      <ion-icon name="remove" slot="end" *ngIf='fourthList'></ion-icon>
+      <ion-icon name="book"></ion-icon>
+      <ion-label>
+        <h2 style="padding-left: 10px;">Fit Manazines</h2>
+        <ion-card class="welcome-card" *ngIf='fourthList' [@enterAnimation]>
+          <ion-card-header>
+            <ion-card-title>Magazines</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h5>
+              <ion-icon name="book"></ion-icon>Calorify
+            </h5>
+            <h5>
+              <ion-icon name="book"></ion-icon> Food meter
+            </h5>
+            <h5>
+              <ion-icon name="book"></ion-icon> Montly diet
+            </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)='toggleList(5)'>
+      <ion-icon name="add" slot="end" *ngIf='!fifthList'></ion-icon>
+      <ion-icon name="remove" slot="end" *ngIf='fifthList'></ion-icon>
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>
+        <h2 style="padding-left: 10px;">Learning</h2>
+        <ion-card class="welcome-card" *ngIf='fifthList' [@enterAnimation]>
+          <ion-card-header>
+            <ion-card-title>Learn to be fit</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h5>
+              <ion-icon name="information-circle"></ion-icon>Information
+            </h5>
+            <h5>
+              <ion-icon name="information-circle"></ion-icon> Workouts
+            </h5>
+            <h5>
+              <ion-icon name="information-circle"></ion-icon> Special diets
+            </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+
+    <ion-item (click)='toggleList(2)'>
+
+      <ion-icon name="add" slot="end" *ngIf='!secondList'></ion-icon>
+      <ion-icon name="remove" slot="end" *ngIf='secondList'></ion-icon>
+      <ion-icon name="settings"></ion-icon>
+      <!-- Settings -->
+      <ion-label>
+        <h2 style="padding-left: 10px;">Settings</h2>
+        <!-- <div style="padding-left: 10px;">
+          <ion-icon name="settings"></ion-icon>
+          Settings
+          <ion-icon name="add" *ngIf='!secondList'></ion-icon>
+          <ion-icon name="remove" *ngIf='secondList'></ion-icon>
+        </div> -->
+        <ion-card class="welcome-card" *ngIf='secondList' [@enterAnimation]>
+          <ion-card-content>
+            <h5>
+              <ion-icon name="settings"></ion-icon>Notifications
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Administration
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Theme change
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> Help & Support
+            </h5>
+            <h5>
+              <ion-icon name="settings"></ion-icon> About app
+            </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+
+    <ion-item (click)='toggleList(3)'>
+
+      <ion-icon name="add" slot="end" *ngIf='!thirdList'></ion-icon>
+      <ion-icon name="remove" slot="end" *ngIf='thirdList'></ion-icon>
+      <ion-icon name="person"></ion-icon>
+      <!-- Profile -->
+      <ion-label>
+        <h2 style="padding-left: 10px;">Profile</h2>
+        <ion-card class="welcome-card" *ngIf='thirdList' [@enterAnimation]>
+          <img src="/assets/shapes.svg" alt="" />
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Today's intake..!</ion-card-subtitle> -->
+            <ion-card-title>User name</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h5>
+              <ion-icon name="person"></ion-icon> Details
+            </h5>
+            <h5>
+              <ion-icon name="person"></ion-icon> Preferences
+            </h5>
+            <h5>
+              <ion-icon name="person"></ion-icon> Billing/ Payment history
+            </h5>
+            <h5>
+              <ion-icon name="person"></ion-icon> Tasks/ Challenges
+            </h5>
+            <h5>
+              <ion-icon name="person"></ion-icon> Logout
+            </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

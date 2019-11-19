@@ -1,0 +1,28 @@
+ion-item{
+    --background: #fafcfc;
+    --color: Dark Black;
+    font-weight: bold;
+    padding: 4px;
+    border: 1px solid whitesmoke;
+}
+
+ion-button{
+    color: white;
+    --background: #4602ff;
+    opacity: 1;
+}
+
+ion-input {
+    border-bottom: 2px solid black;
+}
+a{
+    color: rgb(104, 18, 243);
+}
+
+form {
+    background-color: white;
+    opacity: 0.6;
+}
+ion-content{
+    --background: #fff url('../assets/images/burger.jpeg') no-repeat center center / cover;
+}

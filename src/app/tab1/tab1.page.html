@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar slot="start" style="padding:5px">
+      <img src="../../assets/images/logo_18.png">
+    </ion-avatar>
+    <ion-title style="font-family: Brush Script MT, Brush Script Std, cursive;color: teal;font-size: xx-large; margin-left: -25px !important;
+      margin-bottom: 2px;">
+      Calorify..
+    </ion-title>
+    <ion-avatar slot="end" style="padding:18px">
+      <img src="../../assets/images/person-image.jpg">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-spinner style="margin-top: 50%;margin-left: 50%;" *ngIf='loading' name="dots"></ion-spinner> -->
+<ion-content>
+  <p
+    style="font-style: italic;  font-family: auto; font-size:18px !important;color: brown;padding-left: 20%;width: 80%;">
+    “Success is the sum of
+    small efforts—repeated day-in and day-out.” —Robert Collier
+    <section style="padding-top: 20%;">
+      <section>
+        <ion-button class="top_button" (click)="takeSnap()">
+          <ion-icon name="camera"></ion-icon> <span> Open Camera </span>
+        </ion-button>
+      </section>
+
+      <section>
+        <ion-button class="bottom_button" (click)="accessGallery()">
+          <ion-icon name="image"></ion-icon><span> Upload from gallery </span>
+        </ion-button>
+      </section>
+    </section>
+    <ion-card>
+      <img [src]="capturedSnapURL" />
+    </ion-card>
+</ion-content>

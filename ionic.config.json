@@ -1,0 +1,7 @@
+{
+  "name": "Calorify",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,107 @@
+<style>
+  :root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+</style>
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar slot="start" style="padding:5px">
+      <img src="../../assets/images/logo_18.png">
+    </ion-avatar>
+    <ion-title style="font-family: Brush Script MT, Brush Script Std, cursive;color: teal;font-size: xx-large; margin-left: -25px !important;
+    margin-bottom: 2px;">
+      Calorify..
+    </ion-title>
+    <ion-avatar slot="end" style="padding:18px">
+      <img src="../../assets/images/person-image.jpg">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding">
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle class='title_name'>Hello Jaya Harsha!</ion-card-subtitle>
+      <ion-item>
+        <ion-label> {{ myDate | date : 'fullDate'}}</ion-label>
+      </ion-item>
+      <ion-card-title>2300 K Calories</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Today's intake is 1600 KCal. 700 to go....</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Day Tracker
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-list-header>
+      More options
+    </ion-list-header>
+
+    <ion-item (click)='toggleList(1)'>
+      <ion-icon name="add" slot="start" *ngIf='!firstList'></ion-icon>
+      <ion-icon name="remove" slot="start" *ngIf='firstList'></ion-icon>
+      <ion-label>
+        <h2>Water intake</h2>
+        <h3>Today's water limit</h3>
+        <ion-card class="welcome-card" *ngIf='firstList' [@enterAnimation]>
+          <ion-card-header>
+            <ion-card-subtitle>Total water intake</ion-card-subtitle>
+            <ion-card-title>3 more litres to take</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Water is vital for day to day metabolic functions. Average person should take 8 Litres of water per day.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+
+    <ion-item (click)='toggleList(2)'>
+      <ion-avatar slot="start">
+        <img src="../../assets/icon/favicon.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Vitamin Intake</h2>
+        <h3>Different vitamin composition</h3>
+        <ion-card class="welcome-card" *ngIf='secondList' [@enterAnimation]>
+          <ion-card-header>
+            <ion-card-subtitle>Standard set of vitamins per day</ion-card-subtitle>
+            <!-- <ion-card-title>2300 Calories</ion-card-title> -->
+          </ion-card-header>
+          <ion-card-content>
+            <p>This page shows details about vitamins in your food and their composition in entire diet for today.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/icon/favicon.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Food intake patterns</h2>
+        <h3>Results of intake trends</h3>
+        <p>These are composite trends of food and nutrition intake for entire year.</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/icon/favicon.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Planning</h2>
+        <h3>Plan for next diet schedules</h3>
+        <p>Advanced planning is essential for effective preparation.</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
