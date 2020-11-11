@@ -1,4 +1,4 @@
-# Calorify
+# Calorify - Project Proposal
 Calorify project POC
 
 Project Overview
