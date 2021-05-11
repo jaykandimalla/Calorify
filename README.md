@@ -1,4 +1,7 @@
 # Calorify - Project Proposal
+
+** This proposal is part of Project Management Grad Course - UOttawa **
+
 Calorify project POC
 
 Project Overview
