@@ -36,7 +36,7 @@
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-googleplus": "^8.2.0",
     "core-js": "^2.5.4",
-    "firebase": "^7.2.3",
+    "firebase": "^7.14.0",
     "ionic-angular": "^3.9.9",
     "ionic2-super-tabs": "^5.2.0",
     "moment": "^2.24.0",
